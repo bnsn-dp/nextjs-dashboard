@@ -19,7 +19,7 @@ const CreateInvoice = FormSchema.omit({ id: true, date: true });
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
 export async function createInvoice(formData: FormData) {
-  const { customerId, amount, status } = createInvoice.parse({
+  const { customerId, amount, status } = CreateInvoice.parse({
     customerId: formData.get("customerId"),
     amount: formData.get("amount"),
     status: formData.get("status"),
@@ -44,7 +44,7 @@ export async function createInvoice(formData: FormData) {
 }
 
 export async function updateInvoice(id: string, formData: FormData) {
-  const { customerId, amount, status } = updateInvoice.parse({
+  const { customerId, amount, status } = UpdateInvoice.parse({
     customerId: formData.get("customerId"),
     amount: formData.get("amount"),
     status: formData.get("status"),
